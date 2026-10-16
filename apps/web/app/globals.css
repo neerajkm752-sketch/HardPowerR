@@ -2,13 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
+:root { color-scheme: light; }
 * { box-sizing: border-box; }
-body { background: #07090e; color: #e8edf7; min-height: 100vh; }
-::selection { background: #8b5cf6; color: white; }
-.grid-bg { background-image: linear-gradient(rgba(148,163,184,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.055) 1px, transparent 1px); background-size: 44px 44px; }
-.panel { @apply rounded-2xl border border-white/[.09] bg-[#0d111a]/90 shadow-2xl shadow-black/20; }
-.eyebrow { @apply font-display text-[11px] uppercase tracking-[.2em] text-violet-300; }
-.metric-label { @apply text-[11px] font-medium uppercase tracking-[.13em] text-slate-500; }
-.flag { @apply inline-block h-5 w-7 shrink-0 rounded-[3px] border border-white/10 object-cover shadow-sm; }
-.bar-tooltip { @apply rounded-lg border border-white/10 bg-[#111827] px-3 py-2 text-xs shadow-xl; }
+body {
+  background: linear-gradient(180deg, #e8f5ff 0%, #f7fbff 42%, #ffffff 100%);
+  color: #16324f;
+  min-height: 100vh;
+}
+::selection { background: #38bdf8; color: white; }
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(14, 165, 233, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.panel {
+  @apply rounded-2xl border border-sky-200/80 bg-white/85 shadow-xl shadow-sky-200/40 backdrop-blur-sm;
+}
+.eyebrow { @apply font-display text-[11px] uppercase tracking-[.2em] text-sky-600; }
+.metric-label { @apply text-[11px] font-medium uppercase tracking-[.13em] text-sky-700/70; }
+.flag { @apply inline-block h-5 w-7 shrink-0 rounded-[3px] border border-sky-200 object-cover shadow-sm; }
+.bar-tooltip { @apply rounded-lg border border-sky-200 bg-white px-3 py-2 text-xs text-slate-700 shadow-xl; }
+.field {
+  @apply w-full rounded-lg border border-sky-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none placeholder:text-sky-400/80 focus:border-sky-400 focus:ring-2 focus:ring-sky-200;
+}
+.btn-primary {
+  @apply rounded-lg bg-gradient-to-r from-sky-500 to-cyan-400 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-sky-300/50 transition hover:from-sky-400 hover:to-cyan-300 disabled:opacity-50;
+}
