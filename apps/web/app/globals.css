@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: #07090e; color: #e8edf7; min-height: 100vh; }
+::selection { background: #8b5cf6; color: white; }
+.grid-bg { background-image: linear-gradient(rgba(148,163,184,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.055) 1px, transparent 1px); background-size: 44px 44px; }
+.panel { @apply rounded-2xl border border-white/[.09] bg-[#0d111a]/90 shadow-2xl shadow-black/20; }
+.eyebrow { @apply font-display text-[11px] uppercase tracking-[.2em] text-violet-300; }
+.metric-label { @apply text-[11px] font-medium uppercase tracking-[.13em] text-slate-500; }
+.flag { @apply inline-block h-5 w-7 shrink-0 rounded-[3px] border border-white/10 object-cover shadow-sm; }
+.bar-tooltip { @apply rounded-lg border border-white/10 bg-[#111827] px-3 py-2 text-xs shadow-xl; }

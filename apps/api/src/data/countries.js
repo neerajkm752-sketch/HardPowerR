@@ -1,0 +1,71 @@
+export const CRITERIA = [
+  { key: "military", label: "Military Strength", weight: 25 },
+  { key: "gdp", label: "GDP (absolute)", weight: 20 },
+  { key: "industry", label: "Industrial Output", weight: 10 },
+  { key: "trade", label: "Trade Volume", weight: 10 },
+  { key: "energy", label: "Energy Production", weight: 10 },
+  { key: "nuclear", label: "Nuclear Capability", weight: 8 },
+  { key: "influence", label: "Strategic Influence", weight: 7 },
+  { key: "logistics", label: "Logistics & Infrastructure", weight: 5 },
+  { key: "currency", label: "Currency Power", weight: 5 }
+];
+
+// Baseline expert estimates keep the index usable when a public provider is delayed.
+// The daily World Bank refresh enriches GDP, trade, industry and energy values.
+const seed = [
+  ["United States","US",100,100,90,74,88,100,100,88,100],
+  ["China","CN",91,91,100,100,100,62,88,82,42],
+  ["Russia","RU",85,20,44,38,78,92,72,57,12],
+  ["India","IN",62,29,54,45,49,45,71,56,10],
+  ["United Kingdom","GB",53,25,28,54,24,60,86,82,78],
+  ["France","FR",57,24,38,51,31,73,82,78,67],
+  ["Japan","JP",37,30,50,47,20,10,67,87,58],
+  ["Germany","DE",36,31,55,61,20,10,69,91,65],
+  ["South Korea","KR",35,17,54,53,18,8,44,86,20],
+  ["Turkey","TR",43,14,30,28,31,7,53,55,11],
+  ["Italy","IT",31,18,32,39,18,4,54,72,38],
+  ["Brazil","BR",30,18,29,31,56,4,48,45,12],
+  ["Canada","CA",28,17,24,29,65,4,49,74,26],
+  ["Australia","AU",27,13,18,24,48,4,47,72,21],
+  ["Israel","IL",49,11,24,25,14,67,60,72,12],
+  ["Saudi Arabia","SA",30,15,18,30,91,3,51,52,16],
+  ["Iran","IR",41,8,19,15,54,32,46,39,4],
+  ["Spain","ES",24,15,23,31,17,3,48,69,30],
+  ["Indonesia","ID",25,13,22,25,40,2,43,43,5],
+  ["Mexico","MX",19,14,24,32,22,2,39,51,6],
+  ["Poland","PL",28,10,23,25,16,2,45,61,9],
+  ["Netherlands","NL",15,12,22,65,12,2,49,89,36],
+  ["Pakistan","PK",33,6,16,12,19,68,42,31,3],
+  ["Taiwan","TW",17,14,47,43,15,2,40,81,11],
+  ["Vietnam","VN",16,10,34,48,19,1,35,54,3],
+  ["United Arab Emirates","AE",19,12,18,47,47,1,42,78,26],
+  ["Egypt","EG",25,5,14,13,17,1,40,42,4],
+  ["Thailand","TH",16,10,22,31,17,1,35,54,4],
+  ["Sweden","SE",17,8,22,23,19,1,38,82,22],
+  ["Singapore","SG",14,8,15,72,7,1,45,94,40],
+  ["Norway","NO",16,8,12,19,47,1,37,76,28],
+  ["Argentina","AR",17,8,13,17,22,1,32,43,4],
+  ["Ukraine","UA",27,5,17,11,16,1,37,42,2],
+  ["Malaysia","MY",13,9,24,41,18,1,33,61,7],
+  ["South Africa","ZA",17,7,16,21,29,1,34,48,5],
+  ["Nigeria","NG",15,6,9,12,48,1,31,29,2],
+  ["Belgium","BE",12,9,16,36,9,1,38,83,25],
+  ["Switzerland","CH",9,10,13,22,12,1,41,91,52],
+  ["Denmark","DK",11,7,12,21,15,1,34,85,21],
+  ["Finland","FI",12,6,14,15,14,1,35,79,16],
+  ["Austria","AT",9,7,14,21,10,1,31,78,15],
+  ["Philippines","PH",16,7,12,20,10,1,34,41,3],
+  ["Bangladesh","BD",10,7,18,27,8,1,25,34,2],
+  ["Colombia","CO",13,7,12,17,19,1,29,39,3],
+  ["Chile","CL",10,7,13,18,26,1,30,53,5],
+  ["Algeria","DZ",17,5,10,12,55,1,30,34,2],
+  ["Iraq","IQ",14,5,9,11,51,1,27,27,2],
+  ["Kazakhstan","KZ",13,5,12,15,48,1,28,37,3],
+  ["Qatar","QA",10,6,7,20,69,1,31,67,18],
+  ["New Zealand","NZ",9,5,8,12,15,1,30,74,12]
+];
+
+export const countries = seed.map(([name, code, military, gdp, industry, trade, energy, nuclear, influence, logistics, currency]) => ({
+  name, code,
+  metrics: { military, gdp, industry, trade, energy, nuclear, influence, logistics, currency }
+}));

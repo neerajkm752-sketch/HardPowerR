@@ -1,0 +1,13 @@
+{
+  "name": "hard-power-index",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @hpi/api\" \"npm run dev -w @hpi/web\"",
+    "build": "npm run build -w @hpi/web",
+    "start": "npm run start -w @hpi/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
